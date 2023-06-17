@@ -1,0 +1,91 @@
+<html>
+  <head>
+    js learning
+  </head>
+  <body>
+    <p id="demo"></p>
+  </body>
+  <script>
+    let cars = ["bmw", "volvo", "honda"];
+    document.getElementById("demo").innerHTML = cars;
+
+    let bmw = cars[0];
+    document.getElementById("demo").innerHTML = bmw;
+
+    let len = cars.length;
+    document.getElementById("demo").innerHTML = len;
+
+    let last = cars[cars.length - 1];
+    document.getElementById("demo").innerHTML = last;
+
+    cars.forEach((item, index, array) => {
+      console.log(item, index);
+    });
+    // array to string
+
+    document.getElementById("demo").innerHTML = cars.toString();
+
+    // pop method for removing elements
+
+    let last1 = cars.pop();
+    document.getElementById("demo").innerHTML = last1;
+    let last2 = cars[cars.length - 1];
+    console.log(last2);
+
+    //push method adding new element
+
+    cars.push("Audi");
+    document.getElementById("demo").innerHTML = cars;
+
+    //shift method reducing indexes by 1 or simply removing first element
+
+    cars.shift();
+    document.getElementById("demo").innerHTML = cars;
+
+    //unshift method adding element in beginning
+
+    cars.unshift("Hyundai");
+    document.getElementById("demo").innerHTML = cars;
+
+    //concat method for merging two different array
+
+    let bikes = ["yamaha", "suzuki", "royal enfield"];
+    let vehicles = cars.concat(bikes);
+    document.getElementById("demo").innerHTML = vehicles;
+
+    //sort method sorting array in ascending order
+
+    vehicles.sort();
+    document.getElementById("demo").innerHTML = vehicles;
+
+    //reverse for reversing array element
+
+    vehicles.reverse();
+    document.getElementById("demo").innerHTML = vehicles;
+
+    //array.map for creating new array from existing and applying func in each array element
+
+    let num1 = [2, 3, 4, 5, 6, 7, 8];
+    let num2 = num1.map(multiply);
+    function multiply(value) {
+      return value * 2;
+    }
+    document.getElementById("demo").innerHTML = num2;
+
+    //array.filter takes each element in an array and applies conditional statement
+
+    let num3 = num1.filter(comp);
+    function comp(value) {
+      return value > 4;
+    }
+    document.getElementById("demo").innerHTML = num3;
+
+    //array.reduce an array of values down to just one value using func
+
+    let num4 = num1.reduce(sum);
+    function sum(total, value) {
+      return total + value;
+    }
+    document.getElementById("demo").innerHTML = num4;
+  </script>
+</html>

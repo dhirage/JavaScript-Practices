@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>js functions</title>
+  </head>
+  <h1>creating js functions</h1>
+  <p id="demo"></p>
+  <!-- creating js functions -->
+  <body>
+    <script>
+      function my_function(val) {
+        document.getElementById("demo").innerHTML = val * val;
+      }
+      my_function(5);
+    </script>
+
+    <!-- function expression -->
+
+    <script>
+      let x = function () {
+        alert("Hello");
+      };
+      document.getElementById("demo").innerHTML = x();
+    </script>
+
+    <!-- function constructor -->
+
+    <script>
+      var myfunction = new Function("a", "b", "return a+b");
+      var y = myfunction(4, 5);
+      document.getElementById("demo").innerHTML = "The sum is " + y;
+    </script>
+
+    <!-- self invoking fuunction -->
+
+    <script>
+      (function () {
+        alert("Hello and welcome here");
+      })();
+    </script>
+
+    <!-- function as values -->
+    <!-- <script>
+      function product(a, b) {
+        return a * b;
+      }
+      let z = product(3, 5) * 5;
+      document.getElementById("demo").innerHTML = "The product is " + z;
+    </script> -->
+
+    <!-- function as objects -->
+
+    <script>
+      var body = "return Math.PI *rad*rad";
+      var circle = new Function("rad", body);
+      alert(circle(5));
+    </script>
+
+    <!-- arrow function  -->
+
+    <script>
+      const myfunc = (a, b, c) => {
+        return a * b * c;
+      };
+      let product = myfunc(2, 3, 4);
+      document.getElementById("demo").innerHTML =
+        "The product of three digit is " + product;
+    </script>
+
+    <!-- generator function  -->
+
+    <script>
+      function* generatefunc() {
+        yield 1;
+        yield 2;
+        return 3;
+      }
+      let generator = generatefunc();
+      let one = generator.next();
+      let two = generator.next();
+      let three = generator.next();
+      alert(JSON.stringify(one));
+      alert(JSON.stringify(two));
+      alert(JSON.stringify(three));
+    </script>
+  </body>
+</html>

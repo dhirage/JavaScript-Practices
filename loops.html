@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>js loops</title>
+  </head>
+  <body>
+    <h1>js for loop</h1>
+    <script>
+      let x;
+      for (x = 0; x < 5; x++) console.log(x);
+    </script>
+    <script>
+      let a = 1;
+      while (a <= 5) {
+        console.log(a);
+        a++;
+      }
+      let b = 5;
+      do {
+        console.log(b);
+        b++;
+      } while (b < 10);
+
+      //break
+
+      let c;
+      for (c = 1; c <= 10; c++) {
+        console.log(c);
+        if (c == 7) break;
+      }
+
+      //continue(skip) any array element
+
+      let d;
+      for (d = 1; d <= 10; d++) {
+        if (d == 5) continue;
+        console.log(d);
+      }
+    </script>
+  </body>
+</html>

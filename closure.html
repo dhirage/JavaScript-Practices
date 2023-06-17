@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>js functions</title>
+  </head>
+  <h1>creating js predefined functions</h1>
+  <p id="demo"></p>
+  <body>
+    <!-- variable scope: global and local scope  -->
+    <!-- <script>
+      let a = 10;
+      function my_function() {
+        let b = 20;
+        document.write(a + b);
+      }
+      my_function();
+    </script> -->
+
+    <!-- closure  -->
+
+    <script>
+      var a = 10;
+      function first_func() {
+        var b = 20;
+        function second_func() {
+          var c = a + b;
+          return c;
+        }
+        return second_func();
+      }
+      var sum = first_func();
+      document.write("The sum is " + sum + "<br>");
+    </script>
+  </body>
+</html>

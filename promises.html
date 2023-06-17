@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>JS Learning</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      let car = new Promise(function (resolve, reject) {
+        fuel_fulltank = true;
+        if (fuel_fulltank) {
+          resolve();
+        } else {
+          reject();
+        }
+      });
+
+      car
+        .then(function () {
+          document.write("The fuel tank is full. Ride happily.");
+        })
+        .catch(function () {
+          document.write("The fuel tank is not full.");
+        });
+    </script>
+    <script>
+      let empty_tank = function () {
+        return new Promise(function (resolve, reject) {
+          resolve("the car doesn't have enough fuel");
+        });
+      };
+      let engine = function (msg) {
+        return new Promise(function (resolve, reject) {
+          resolve(msg + "the engine is over heating");
+        });
+      };
+      let travel = function (msg) {
+        return new Promise(function (resolve, reject) {
+          resolve(msg + "the car is not safe for travel");
+        });
+      };
+      empty_tank()
+        .then(function (result) {
+          return engine(result);
+        })
+        .then(function (result) {
+          return travel(result);
+        })
+        .then(function (result) {
+          console.log("done " + result);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>js objects</title>
+  </head>
+  <body>
+    <h1>creating js objects</h1>
+    <!-- name:value is created using js objects -->
+    <p id="demo"></p>
+    <script>
+      var student = {
+        name: "dhiraj",
+        age: 24,
+        studies: "csit",
+      };
+      document.getElementById("demo").innerHTML =
+        student.name + "of the age" + student.age + "studies" + student.studies;
+    </script>
+    <!-- second method -->
+    <script>
+      var student = new Object();
+      (student.name = "dhiraj"), (student.age = 24), (student.studies = "csit");
+      document.getElementById("demo").innerHTML =
+        student.name +
+        " of the age" +
+        student.age +
+        " studies" +
+        student.studies;
+    </script>
+
+    <script>
+      function stud(name, age, studies) {
+        this.name = name;
+        this.age = age;
+        this.studies = studies;
+      }
+      var student = new stud("dhiraj", 24, " bsc.csit");
+      document.getElementById("demo").innerHTML =
+        student.name + "of the age" + student.age + "studies" + student.studies;
+    </script>
+  </body>
+</html>

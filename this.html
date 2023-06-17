@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>JS Learning</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      var value = 50;
+
+      function my_function() {
+        var value = 100;
+        alert("Value: " + value);
+        alert("This value: " + this.value);
+      }
+      my_function();
+    </script>
+
+    <script>
+      const random = {
+        name: "tutorial",
+        video: ["javascript", "this", "keyword"],
+        info() {
+          this.video.forEach(function (tag) {
+            console.log(this.name, tag);
+          }, this);
+        },
+      };
+      random.info();
+    </script>
+  </body>
+</html>

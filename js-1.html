@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <script language="javascript" type="text/javascript">
+      document.write("Hello World!");
+
+      function createHelloWorld() {
+        return function () {
+          return "Hello, World";
+        };
+      }
+
+      // Usage:
+      const helloFn = createHelloWorld();
+      console.log(helloFn()); // Output: Hello, World
+    </script>
+
+    <script>
+      function createCounter() {
+        let counter = 0;
+        const myFunction = function () {
+          counter = counter + 1;
+          return counter;
+        };
+        return myFunction;
+      }
+      const increment = createCounter();
+      const c1 = increment();
+      const c2 = increment();
+      const c3 = increment();
+      console.log("example increment", c1, c2, c3);
+    </script>
+  </body>
+</html>
